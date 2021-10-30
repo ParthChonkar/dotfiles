@@ -23,7 +23,7 @@ syntax enable
 
 " Look and Feel
 set background=dark
-colorscheme desert
+colorscheme slate
 
 " Line numbers
 set number rnu
@@ -32,7 +32,7 @@ highlight LineNr ctermfg=grey
 " Textwidth
 set textwidth=85
 
-" Set utf8 as standard encoding and en_US as the standard language
+" Set utf8 as standard encoding
 set encoding=utf8
 
 " Use Unix as the standard file type
@@ -47,6 +47,12 @@ set tw=100
 
 " Auto indents + wrapping
 set ai si wrap
+
+" Default to tree mode for netrw
+let g:netrw_liststyle = 3
+
+" Netrw lining
+let g:netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
 
 " Fast move between windows
 map <C-j> <C-W>j
