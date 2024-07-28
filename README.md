@@ -1,2 +1,1 @@
-# vimrc
-vimrc, tmux config, etc
+# dotfiles
