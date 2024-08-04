@@ -4,7 +4,7 @@
 # Call in vim with [:r !sh idgen.sh] when launched from the zettel root
 # (can also add to $PATH if necessary)
 idgen() {
-    echo "ID:"$(date +"%d%m%Y%H%M%S")
+    echo "ID:"$(date +"%m%d%Y%H%M%S")
 }
 
 # Outputs files with a matching tag

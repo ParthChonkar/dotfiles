@@ -1,7 +1,7 @@
 " :source this file or add it to your *rc/*config
 
 function! ZidGenF()
-    let date_output = system('date +"%d%m%Y%H%M%S"')
+    let date_output = system('date +"%m%d%Y%H%M%S"')
     " Remove the trailing newline from the date output
     let date_output = substitute(date_output, '\n', '', 'g')
     let result = "ID:" . date_output
