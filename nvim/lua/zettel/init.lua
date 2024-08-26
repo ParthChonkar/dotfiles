@@ -1,4 +1,6 @@
-" :source this file or add it to your *rc/*config
+-- I should lua-ize this at some point
+
+vim.cmd([[
 
 function! ZidGenF()
     let date_output = system('date +"%m%d%Y%H%M%S"')
@@ -20,11 +22,11 @@ function! ZtagListF()
     let qfix_list = []
     " Set a quick fix list of these files
     for file in files_list
-	" Set the title as the tag line in the file
-	let tag_lines =  system('grep "TAGS:" ' . file)
-	let tag_line = substitute(split(tag_lines, '\n')[0], '\n', '', 'g')
+        " Set the title as the tag line in the file
+        let tag_lines =  system('grep "TAGS:" ' . file)
+        let tag_line = substitute(split(tag_lines, '\n')[0], '\n', '', 'g')
         let qfix_entry = {'filename': file, 'lnum': 1, 'col': 1, 'text': tag_line}
-	call add(qfix_list, qfix_entry)
+        call add(qfix_list, qfix_entry)
     endfor
     call setqflist(qfix_list, 'r')
     " Open the qflist modal
@@ -34,3 +36,16 @@ endfunction
 
 command! ZtagList call ZtagListF()
 
+function! ZTodayF()
+    let date_output = system('date +"%Y%m%d"')
+    " Remove the trailing newline from the date output
+    let date_output = substitute(date_output, '\n', '', 'g')
+    if !isdirectory('transient')
+        throw "Can't find transient directory!"
+    endif
+    execute 'e transient/' . date_output . '.md'
+endfunction
+
+command! ZToday call ZTodayF()
+
+]])
