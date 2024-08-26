@@ -99,3 +99,6 @@ FZF_CMD_COMPLETE_FILE="/usr/share/doc/fzf/examples/completion.bash"
 if [-f $FZF_CMD_COMPLETE_FILE]; then
     . $FZF_CMD_COMPLETE_FILE
 fi
+
+# Editor 
+EDITOR=$(which vim)

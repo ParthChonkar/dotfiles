@@ -1,4 +1,4 @@
-require('user.plugins')
+require('plugins')
 require('user.vimoptions') 
 require('user.nvimoptions')
 require('user.zenmode')
@@ -9,5 +9,6 @@ require('user.treesitter')
 require('user.lspsettings')
 require('user.lspserverconfig')
 require('user.autocomplete')
+require('user.startup')
 
 require('zettel')
