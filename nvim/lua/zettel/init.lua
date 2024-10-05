@@ -36,6 +36,27 @@ endfunction
 
 command! ZtagList call ZtagListF()
 
+function! ZidRefF()
+    let files_grep = system('grep -l -r "\\[\\[' . expand('<cword>') . '\\]\\]" *')
+    let files_list = split(files_grep, '\n')
+    call filter(files_list, 'v:val != ""')
+    let qfix_list = []
+    " Set a quick fix list of these files
+    for file in files_list
+	" Set the title as the first title in the file
+	let first_header =  system('grep "#.*" ' . file)
+	let tag_line = substitute(split(first_header, '\n')[0], '\n', '', 'g')
+        let qfix_entry = {'filename': file, 'lnum': 1, 'col': 1, 'text': tag_line}
+	call add(qfix_list, qfix_entry)
+    endfor
+    call setqflist(qfix_list, 'r')
+    " Open the qflist modal
+    copen
+endfunction
+
+
+command! ZidRef call ZidRefF()
+
 function! ZTodayF()
     let date_output = system('date +"%Y%m%d"')
     " Remove the trailing newline from the date output
