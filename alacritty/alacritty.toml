@@ -2,7 +2,7 @@
 
 [general]
 import = [
-    #"alacritty-theme/themes/gruvbox_dark.toml"
+    "alacritty-theme/themes/citylights.toml"
 ]
 
 [window]
@@ -13,14 +13,19 @@ history = 100000
 
 [font]
 normal = { family = "Menlo", style = "Regular" }
-size = 12.5
+size = 13.5
 offset = {x = 1, y = 1}
+
+# Shell stuff (mac arm)
 
 [terminal.shell]
 program = "/opt/homebrew/bin/bash"
 args = ["-l"]
 
+[env]
+SHELL="/opt/homebrew/bin/bash"
+
+
 [terminal]
 osc52 = "OnlyCopy"
-
 
