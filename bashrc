@@ -75,30 +75,30 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-
-force_color_prompt=yes
-
+# Vim!
 set -o vi
 
 # Enable FZF history search 
 FZF_KEY_BINDINGS_FILE="/usr/share/doc/fzf/examples/key-bindings.bash"
-if [-f $FZF_KEY_BINDINGS_FILE]; then
+if [ -f $FZF_KEY_BINDINGS_FILE ]; then
     . $FZF_KEY_BINDINGS_FILE
 fi
 
 # Enable FZF command line completion
 FZF_CMD_COMPLETE_FILE="/usr/share/doc/fzf/examples/completion.bash"
-if [-f $FZF_CMD_COMPLETE_FILE]; then
+if [ -f $FZF_CMD_COMPLETE_FILE ]; then
     . $FZF_CMD_COMPLETE_FILE
 fi
 
 # Editor 
-EDITOR=$(which vim)
+export EDITOR=$(which vim)
+
+# Machine specific stuff
+if [ -e ~/.macrc ]; then
+    . ~/.macrc
+fi

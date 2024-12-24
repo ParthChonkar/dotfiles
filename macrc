@@ -1,0 +1,14 @@
+# Include this file for ARM mac with homebrew
+
+# Just go ahead and set the colorized cmds -  I'm 
+# not going to use the terminal unless things are 
+# set up for the following lines to work ¯\_(ツ)_/¯
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Homebrew installation differs on intel (/usr/local/bin)
+# This also will point  bash to the new version instead of 3.2!
+eval "$(/opt/homebrew/bin/brew shellenv)"
