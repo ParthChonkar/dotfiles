@@ -83,6 +83,13 @@ fi
 # Vim!
 set -o vi
 
+# ----- After application/path init ---- #
+
+# Machine specific stuff
+if [ -e ~/.macrc ]; then
+    . ~/.macrc
+fi
+
 # Enable FZF history search 
 FZF_KEY_BINDINGS_FILE="/usr/share/doc/fzf/examples/key-bindings.bash"
 if [ -f $FZF_KEY_BINDINGS_FILE ]; then
@@ -95,10 +102,12 @@ if [ -f $FZF_CMD_COMPLETE_FILE ]; then
     . $FZF_CMD_COMPLETE_FILE
 fi
 
+# This is a much better way to do the FZF cmd line completion
+# TODO: Test whether this works on wsl then can remove above lines
+if [ -x "$(command -v fzf)" ]; then
+    eval "$(fzf --bash)"
+fi
+
 # Editor 
 export EDITOR=$(which vim)
 
-# Machine specific stuff
-if [ -e ~/.macrc ]; then
-    . ~/.macrc
-fi
