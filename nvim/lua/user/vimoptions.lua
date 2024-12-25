@@ -65,3 +65,8 @@ vim.opt.splitright = true
 -- Map leader to space before plugin install
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+-- More ergonomic back insert -> normal
+vim.keymap.set("i", "jk", "<C-c>", {silent = true})
+vim.keymap.set("i", "<C-c>", "<nop>", {silent = true})
+

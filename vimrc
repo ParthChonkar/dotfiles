@@ -63,3 +63,7 @@ map <C-l> <C-W>l
 " Horizontal split direction 
 set splitbelow
 
+" Ergonomic insert -> normal 
+inoremap jk <C-c>
+inoremap <C-c> <nop>
+
