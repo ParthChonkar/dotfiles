@@ -40,6 +40,9 @@ vim.cmd([[
     " See user/startup.lua
     Plug 'eoh-bse/minintro.nvim'
 
+    " See user/osc52.lua
+    Plug 'ojroques/nvim-osc52'
+
     call plug#end()
 ]])
 

@@ -10,5 +10,6 @@ require('user.lspsettings')
 require('user.lspserverconfig')
 require('user.autocomplete')
 require('user.startup')
+require('user.osc52')
 
 require('zettel')
