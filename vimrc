@@ -63,7 +63,13 @@ map <C-l> <C-W>l
 " Horizontal split direction 
 set splitbelow
 
+" Leader key
+let mapleader=" "
+
 " Ergonomic insert -> normal 
 inoremap jk <C-c>
 inoremap <C-c> <nop>
 
+" Ergonomic visual -> normal 
+vnoremap <leader>j <C-c>
+vnoremap <C-c> <nop>

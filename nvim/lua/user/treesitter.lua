@@ -45,4 +45,3 @@ vim.opt.foldtext = ""
 -- By default, things 5 levels in will be folded
 vim.opt.foldlevelstart = 5
 
-

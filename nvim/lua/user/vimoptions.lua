@@ -66,7 +66,10 @@ vim.opt.splitright = true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- More ergonomic back insert -> normal
+-- More ergonomic insert -> normal
 vim.keymap.set("i", "jk", "<C-c>", {silent = true})
 vim.keymap.set("i", "<C-c>", "<nop>", {silent = true})
 
+-- More ergonomic visual -> normal 
+vim.keymap.set("v", "<leader>j", "<C-c>", {silent = true})
+vim.keymap.set("v", "<C-c>", "<nop>", {silent = true})
