@@ -13,3 +13,9 @@ alias pushd-git-home='pushd $(git rev-parse --show-toplevel)'
 
 # ripgrep
 alias rg='rg --hidden'
+
+# output last run command
+last-cmd() {
+    lookback=${1:-1}
+    fc -lnr | sed 's/^[[:blank:]]*//g' | awk "NR == $lookback"
+}
