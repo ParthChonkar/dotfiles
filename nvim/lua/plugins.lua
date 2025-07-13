@@ -43,6 +43,9 @@ vim.cmd([[
     " See user/osc52.lua
     Plug 'ojroques/nvim-osc52'
 
+    " Fancy animations
+    Plug 'sphamba/smear-cursor.nvim'
+
     call plug#end()
 ]])
 
