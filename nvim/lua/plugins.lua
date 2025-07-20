@@ -46,6 +46,9 @@ vim.cmd([[
     " Fancy animations
     Plug 'sphamba/smear-cursor.nvim'
 
+    " Floating terminal
+    Plug 'numToStr/FTerm.nvim'
+
     call plug#end()
 ]])
 

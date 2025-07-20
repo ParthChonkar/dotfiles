@@ -12,5 +12,6 @@ require('user.autocomplete')
 require('user.smear')
 require('user.startup')
 require('user.osc52')
+require('user.fterm')
 
 require('zettel')
