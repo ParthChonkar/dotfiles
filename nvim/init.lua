@@ -13,5 +13,8 @@ require('user.smear')
 require('user.startup')
 require('user.osc52')
 require('user.fterm')
+require('user.rendermkdwn')
+require('user.rust')
+require('user.anki')
 
 require('zettel')

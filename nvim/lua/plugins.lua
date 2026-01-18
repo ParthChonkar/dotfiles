@@ -49,6 +49,16 @@ vim.cmd([[
     " Floating terminal
     Plug 'numToStr/FTerm.nvim'
 
+    " Web Icons
+    Plug 'nvim-tree/nvim-web-devicons'
+
+    " Render Markdown
+    Plug 'MeanderingProgrammer/render-markdown.nvim'
+
+    " Rust specific stuff
+    Plug 'simrat39/rust-tools.nvim'
+
+
     call plug#end()
 ]])
 
