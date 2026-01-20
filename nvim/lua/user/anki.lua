@@ -24,6 +24,8 @@ end, { desc = "Wrap in Anki cloze" })
 
 -- Reset cloze counter
 vim.keymap.set('n', '<leader>c0', function()
-  cloze_counter = 1
-  print("Cloze counter reset to 1")
+  local num = vim.fn.input("Reset cloze counter to: ")
+  if num == "" then num = "1" end
+  cloze_counter = tonumber(num) or 1
+  print("Cloze counter set to " .. cloze_counter)
 end, { desc = "Reset Anki cloze counter" })
